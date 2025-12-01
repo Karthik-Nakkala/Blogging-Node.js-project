@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogs</title>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/navBar.ejs')  %>
+    <form action="/blog" method="post" enctype="multipart/form-data">
+        
+    <div class="m-3">
+        <label>Title</label>
+      <input type="text" name="title" id="title" class="form-control" placeholder="title...">
+    </div>
+    
+    <div class="form-floating m-3">
+        
+      <textarea class="form-control " name="body" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+      <label for="floatingTextarea2" class="m-1">BODY</label>
+      
+   </div>
+   <div class="m-3">
+     <label for="coverImage" class="form-label">Upload cover image</label>
+     <input class="form-control" name="coverImage" type="file" id="coverImage">
+   </div>
+   <input class="btn btn-primary m-3" type="submit" value="Submit">
+   </form>
+    <%- include('./partials/script') %>
+</body>
+</html>

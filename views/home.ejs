@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogging</title>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/navBar.ejs')  %>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+    <% blogs.forEach(blog => { %>
+     
+        <div class="card" style="width: 18rem;">
+         <img src="<%= blog.coverImageURL %>" class="card-img-top" height="300px" alt="not found">
+         <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+             
+             <a href="/blog/<%= blog._id %>" class="btn btn-primary">view</a>
+         </div>
+        </div>
+     
+     
+    <% }) %>
+    </div>
+    <%- include('./partials/script') %>
+</body>
+</html>
